@@ -16,7 +16,7 @@ class DatiVitali
 
     #[ORM\OneToOne(inversedBy: 'datiVitali', cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Anagrafica $anagraficaId = null;
+    private ?Anagrafica $anagrafica = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $dataDiNascita = null;
@@ -29,14 +29,14 @@ class DatiVitali
         return $this->id;
     }
 
-    public function getAnagraficaId(): ?Anagrafica
+    public function getAnagrafica(): ?Anagrafica
     {
-        return $this->anagraficaId;
+        return $this->anagrafica;
     }
 
-    public function setAnagraficaId(Anagrafica $anagraficaId): static
+    public function setAnagrafica(Anagrafica $anagrafica): static
     {
-        $this->anagraficaId = $anagraficaId;
+        $this->anagrafica = $anagrafica;
 
         return $this;
     }

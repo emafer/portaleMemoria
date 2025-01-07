@@ -15,11 +15,11 @@ class Comune
 
     #[ORM\ManyToOne(inversedBy: 'comuni')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Provincia $provinciaId = null;
+    private ?Provincia $provincia = null;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Stato $statoId = null;
+    private ?Stato $stato = null;
 
     #[ORM\Column(length: 255)]
     private ?string $nome = null;
@@ -29,26 +29,26 @@ class Comune
         return $this->id;
     }
 
-    public function getProvinciaId(): ?Provincia
+    public function getProvincia(): ?Provincia
     {
-        return $this->provinciaId;
+        return $this->provincia;
     }
 
-    public function setProvinciaId(?Provincia $provinciaId): static
+    public function setProvincia(?Provincia $provincia): static
     {
-        $this->provinciaId = $provinciaId;
+        $this->provincia = $provincia;
 
         return $this;
     }
 
-    public function getStatoId(): ?Stato
+    public function getStato(): ?Stato
     {
-        return $this->statoId;
+        return $this->stato;
     }
 
-    public function setStatoId(?Stato $statoId): static
+    public function setStato(?Stato $stato): static
     {
-        $this->statoId = $statoId;
+        $this->stato = $stato;
 
         return $this;
     }

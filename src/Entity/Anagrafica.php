@@ -5,7 +5,6 @@ namespace App\Entity;
 use App\Repository\AnagraficaRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: AnagraficaRepository::class)]
@@ -89,8 +88,8 @@ class Anagrafica
     public function setDatiVitali(DatiVitali $datiVitali): static
     {
         // set the owning side of the relation if necessary
-        if ($datiVitali->getAnagraficaId() !== $this) {
-            $datiVitali->setAnagraficaId($this);
+        if ($datiVitali->getAnagrafica() !== $this) {
+            $datiVitali->setAnagrafica($this);
         }
 
         $this->datiVitali = $datiVitali;
